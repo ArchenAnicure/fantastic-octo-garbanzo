@@ -1,2 +1,1 @@
-# fantastic-octo-garbanzo
-random scripts
+# random scripts
