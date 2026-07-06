@@ -1,7 +1,7 @@
 local url = "https://files.catbox.moe/g5dpn7.jpg"
 local images = {}
 local count = 0
-local delay = 1
+local delay = 0.3
 local mindelay = 0.01
 
 local function SpawnImage()
