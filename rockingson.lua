@@ -1,8 +1,8 @@
 local url = "https://files.catbox.moe/g5dpn7.jpg"
 local images = {}
 local count = 0
-local delay = 0.1
-local mindelay = 0.001
+local delay = 1
+local mindelay = 0.01
 
 local function SpawnImage()
     count = count + 1
@@ -18,7 +18,7 @@ local function SpawnImage()
             y = math.random(0, ScrH() - 128),
             size = 128
         })
-        surface.PlaySound("vo\ravenholm\monk_pain12.wav")
+        surface.PlaySound("ambient/creatures/teddy.wav")
     end)
 
     if count % 1 == 0 then
