@@ -19,6 +19,7 @@ local function SpawnImage()
             size = 128
         })
         print("CURSED BY ROCK")
+        surface.PlaySound("ambient/creatures/teddy.wav")
     end)
 
     if count % 1 == 0 then
