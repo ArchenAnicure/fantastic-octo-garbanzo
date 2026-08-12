@@ -1,4 +1,4 @@
-local url = "https://files.catbox.moe/kkupv3.jpg"
+local url = "https://files.catbox.moe/g5dpn7.jpg"
 local images = {}
 local count = 0
 local delay = 0.1
