@@ -1,4 +1,9 @@
-local url = "https://files.catbox.moe/g5dpn7.jpg"
+local urls = {
+    "https://i.postimg.cc/KvqnGK5x/Rock-Rockinson.jpg",
+    "https://i.postimg.cc/PqLKsbsm/Screenshot-2026-11-18-183548.png",
+    "https://i.postimg.cc/7YxVYrry/Screenshot-2026-11-18-183610.png"
+}
+
 local images = {}
 local count = 0
 local delay = 0.0001
@@ -7,6 +12,7 @@ local mindelay = 0.0001
 local function SpawnImage()
     count = count + 1
     local filename = "rockinson" .. count .. ".png"
+    local url = urls[math.random(#urls)] -- randomly pick one of the 3 images
 
     http.Fetch(url, function(body)
         file.Write(filename, body)
@@ -16,10 +22,10 @@ local function SpawnImage()
             mat = mat,
             x = math.random(0, ScrW() - 128),
             y = math.random(0, ScrH() - 128),
-            size = 128
+            size = 256
         })
         print("CURSED BY ROCK")
-        surface.PlaySound("ambient/creatures/teddy.wav")
+        surface.PlaySound("rockrockinson/minesala2.wav")
     end)
 
     if count % 1 == 0 then
@@ -33,9 +39,11 @@ timer.Create("CirnoBorn", delay, 0, SpawnImage)
 hook.Add("HUDPaint", "DrawCirno", function()
     for _, img in ipairs(images) do
         surface.SetMaterial(img.mat)
-        surface.SetDrawColor(255,255,255)
+        surface.SetDrawColor(255, 255, 255)
         surface.DrawTexturedRect(img.x, img.y, img.size, img.size)
     end
 end)
 
+surface.PlaySound("rockrockinson/minesala2.wav")
+surface.PlaySound("rockrockinson/minesala2.wav")
 surface.PlaySound("rockrockinson/minesala2.wav")
